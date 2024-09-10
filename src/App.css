@@ -20,17 +20,10 @@ body {
   gap: 0; /* Ensure no gaps between rows */
   margin: 0; /* Remove any default margin */
   padding: 0; /* Remove any default padding */
+  width: 100%; /* Ensure it always fills the screen */
 }
 
 
-/* Header */
-header {
-  background-color: #333;
-  color: white;
-  padding: 20px;
-  text-align: center;
-  font-size: 1.5rem;
-}
 
 /* Nav */
 nav {
@@ -70,6 +63,7 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column; /* Align items vertically */
   background-color: white;
 }
 
@@ -120,7 +114,7 @@ footer p {
   justify-content: space-between;
   align-items: flex-start;
   background-color: #495E57;
-  padding: 0px 200px ;
+  padding: 20px 200px ;
   color: white;
   font-family: 'Karla', sans-serif; /* Using Karla for descriptive and section text */
 }
@@ -171,15 +165,6 @@ footer p {
   background-color: #e0b20d;
 }
 
-/* Right section styles */
-.header-right img {
-  width: 400px;  /* Set the width to 325px */
-  height: 400px; /* Set the height to 375px */
-  object-fit: fill; /* Ensures the image fits within the dimensions without distortion */
-  margin-top: 20px;
-  border-radius: 20px; /* Adjust this value to control how rounded the corners are */
-}
-
 
 /* Reusable button styles */
 .btn {
@@ -199,11 +184,13 @@ footer p {
 
 /* Right section styles */
 .header-right img {
-  max-width: 100%;
+  max-width: 15rem;
+  min-width: 10rem;
   height: auto;
+  object-fit: fill; /* Ensures the image fits within the dimensions without distortion */
   margin-top: 20px;
+  border-radius: 20px; /* Adjust this value to control how rounded the corners are */
 }
-
 
 /* Nav */
 nav {
@@ -313,9 +300,6 @@ footer p {
 .food-item-details {
   text-align: center;
   flex-grow: 1; /* Make the details take available space */
-  display: flex;
-  flex-direction: column; /* Ensure vertical layout */
-  justify-content: flex-start;
 }
 
 .food-item-header {
@@ -341,16 +325,18 @@ footer p {
 .food-item-description {
   font-size: 1rem;
   color: #555;
-  margin-bottom: auto;
+
 }
 
-/* Ensure the order link stays at the bottom */
+.food-item-description {
+  margin-bottom: 15px;
+}
 .food-item-order-link {
   text-decoration: none;
   font-weight: bold;
   color: #ff4500;
   cursor: pointer;
-  margin-top: auto; /* Pushes the link to the bottom */
+  align-self: flex-end;
 }
 
 .food-item-order-link:hover {
@@ -358,10 +344,47 @@ footer p {
   color: #ff6347;
 }
 
+.specials-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  gap: 35em;
+}
 
-/* Responsive adjustments */
 @media (max-width: 768px) {
+  .App {
+  display: grid;
+  grid-template-rows: auto auto 1fr;
+  height: 100vh;
+  gap: 0;
+  margin: 0;
+  padding: 0;
+  width: 100%; /* Ensure it always fills the screen */
+}
+
   footer {
-    grid-template-columns: 1fr; /* Stack items vertically */
+    grid-template-columns: 1fr;
+  }
+
+  .header, main, .food-item-list, .specials-header {
+    width: 100%; /* Ensure full width on smaller screens */
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .header-left {
+    width: 100%; /* Ensure the left section takes full width */
+  }
+
+  .food-item-container {
+    width: 100%;        /* The element takes up 100% of the parent container */
+    max-width: 700px;  /* The element won't grow larger than 1200px */
+    min-width: 100px;   /* The element won't shrink smaller than 300px */
+  }
+
+  .specials-header {
+    justify-content: center; /* Center items */
+    gap: 0; /* Remove excess space between elements */
   }
 }

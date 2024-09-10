@@ -1,4 +1,4 @@
-import logo from '../assests/restauranfood.jpg';
+import logo from '../assets/restauranfood.jpg';
 import Button from './Button';
 
 const Header = () => {

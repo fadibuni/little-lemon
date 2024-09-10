@@ -2,10 +2,16 @@ import React from "react";
 import FoodItem from "./FoodItem";
 import greekSaladImage from "../assets/greek salad.jpg"; // Ensure the correct path for your image
 import bruschettaImage from "../assets/bruchetta.svg"; // Ensure the correct path for your image
-import lemonDessertImage from "../assets/lemon dessert.jpg"; // Ensure the correct path for your image 
+import lemonDessertImage from "../assets/lemon dessert.jpg"; // Ensure the correct path for your image
+import Button from "./Button";
+
 const Main = () => {
   return (
     <main>
+      <div className="specials-header">
+        <h1>This Week's Specials!</h1>
+        <Button text="Online Menu" />
+      </div>
       <div className="food-item-list">
         <FoodItem
           image={greekSaladImage}

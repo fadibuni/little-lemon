@@ -1,8 +1,10 @@
 import React from 'react';
-
+import logo from '../assests/Logo.svg';
 const Nav = () => {
     return (
         <nav>
+            <img src={logo} alt="Logo" />
+
             <ul>
                 <li><a href="/">Home</a></li>
                 <li><a href="/about">About</a></li>

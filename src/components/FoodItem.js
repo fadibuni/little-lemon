@@ -9,8 +9,8 @@ const FoodItem = ({ image, name, price, description }) => {
           <h3 className="food-item-name">{name}</h3>
           <p className="food-item-price">${price}</p>
         </div>
-        <p className="food-item-description">{description}</p>
-        <a href="#" className="food-item-order-link">Order a Delivery</a>
+          <p className="food-item-description">{description}</p>
+          <a href="#" className="food-item-order-link">Order a Delivery</a>
       </div>
     </div>
   );

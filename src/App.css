@@ -20,7 +20,6 @@ body {
   gap: 0; /* Ensure no gaps between rows */
   margin: 0; /* Remove any default margin */
   padding: 0; /* Remove any default padding */
-  width: 100%; /* Ensure it always fills the screen */
 }
 
 
@@ -300,6 +299,9 @@ footer p {
 .food-item-details {
   text-align: center;
   flex-grow: 1; /* Make the details take available space */
+  display: flex;
+  flex-direction: column; /* Ensure vertical layout */
+  justify-content: flex-start;
 }
 
 .food-item-header {
@@ -325,18 +327,16 @@ footer p {
 .food-item-description {
   font-size: 1rem;
   color: #555;
-
+  margin-bottom: auto;
 }
 
-.food-item-description {
-  margin-bottom: 15px;
-}
+/* Ensure the order link stays at the bottom */
 .food-item-order-link {
   text-decoration: none;
   font-weight: bold;
   color: #ff4500;
   cursor: pointer;
-  align-self: flex-end;
+  margin-top: auto; /* Pushes the link to the bottom */
 }
 
 .food-item-order-link:hover {
@@ -351,40 +351,22 @@ footer p {
   margin-bottom: 20px;
   gap: 35em;
 }
-
+/* Responsive adjustments */
 @media (max-width: 768px) {
-  .App {
-  display: grid;
-  grid-template-rows: auto auto 1fr;
-  height: 100vh;
-  gap: 0;
-  margin: 0;
-  padding: 0;
-  width: 100%; /* Ensure it always fills the screen */
-}
-
   footer {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr; /* Stack items vertically */
   }
 
   .header, main, .food-item-list, .specials-header {
-    width: 100%; /* Ensure full width on smaller screens */
+    align-items: center;
+    justify-content: center;
     flex-direction: column;
     padding: 20px;
   }
-
-  .header-left {
-    width: 100%; /* Ensure the left section takes full width */
-  }
-
-  .food-item-container {
-    width: 100%;        /* The element takes up 100% of the parent container */
-    max-width: 700px;  /* The element won't grow larger than 1200px */
-    min-width: 100px;   /* The element won't shrink smaller than 300px */
-  }
-
   .specials-header {
-    justify-content: center; /* Center items */
-    gap: 0; /* Remove excess space between elements */
+    gap: 0;
+  }
+  .header-left {
+    width: 100%;
   }
 }

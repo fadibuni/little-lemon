@@ -1,5 +1,6 @@
 import logo from '../assets/restauranfood.jpg';
 import Button from './Button';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
     return (
@@ -10,7 +11,9 @@ const Header = () => {
                 <p className="header-description">
                     We are a family owned Mediterranean restaurant, focused on traditional recipes served with a modern twist.
                 </p>
-                <Button text="Reserve a Table" />
+                <Link to="/booking">
+                    <Button text="Reserve a Table" />
+                </Link>
             </div>
             <div className="header-right">
                 <img src={logo} alt="" />
